@@ -54,19 +54,21 @@ echo
 
 apt-get install -y -f \
   apt-utils \
-  less \
+  build-essential \
+  cmake \
   curl \
-  vim \
-  x11-apps \
+  gdb \
+  gfortran \
+  git \
+  inotify-tools \
+  less \
   mlocate \
   p7zip-full \
-  sudo \
-  inotify-tools \
   python3 \
   python3-pip \
-  build-essential \
-  gfortran \
-  git
+  sudo \
+  vim \
+  x11-apps
 
 apt-get -y upgrade
 
@@ -80,8 +82,8 @@ ldconfig
 ln -s /usr/bin/python3 /usr/bin/python
 
 # Install Node (for mlkctxt) from their repos
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
@@ -92,6 +94,11 @@ update-locale LANG=$LOCALE
 
 ldconfig
 
+# Update pip
+python -m pip install --upgrade pip
+
+# PIP installs
+python -m pip install --upgrade fortls
 
 echo
 echo ---------------------------
