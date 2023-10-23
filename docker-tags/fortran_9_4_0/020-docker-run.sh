@@ -10,6 +10,5 @@ docker run -ti --rm \
     --hostname fortran_test \
     -v $(pwd):$(pwd) \
     --workdir $(pwd) \
+    --user 1000:1000 \
     malkab/fortran:9.4.0
-
-    # --user 1000:1000 \
