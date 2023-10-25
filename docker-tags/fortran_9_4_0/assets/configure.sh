@@ -66,9 +66,6 @@ apt-get autoremove --yes
 
 ldconfig
 
-# Some ln
-ln -s /usr/bin/python3 /usr/bin/python
-
 # Clean up
 rm -rf /var/lib/apt/lists/*
 
