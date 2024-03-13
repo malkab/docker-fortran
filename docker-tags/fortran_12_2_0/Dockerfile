@@ -25,6 +25,7 @@ RUN apt-get install -y -f \
         gfortran \
         git \
         fortran-language-server \
+        inotify-tools \
         sudo
 
 RUN apt-get -y upgrade
