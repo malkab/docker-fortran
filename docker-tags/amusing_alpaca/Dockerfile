@@ -14,6 +14,7 @@ ADD assets/locale.sh /
 ADD assets/sudoers /
 ADD assets/mlkctxt /mlkctxt
 ADD assets/node-18.14.0/node /node
+ADD assets/fzf /usr/local/bin/
 
 # Locale
 ENV LOCALE=es_ES.UTF-8
@@ -42,12 +43,14 @@ RUN apt-get install -y -f \
         vim \
         x11-apps \
         libncurses5-dev \
-        libncursesw5-dev
+        libncursesw5-dev \
+        mkdocs \
+        bat
 
 # Some ln -s
 RUN ln -s /usr/bin/python3 /usr/bin/python
-# RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/ipython3 /usr/bin/ipython
+RUN ln -s /usr/bin/batcat /usr/bin/bat
 
 # PIP installs
 RUN /usr/bin/python3 -m pip install --upgrade --break-system-packages \
@@ -57,7 +60,10 @@ RUN /usr/bin/python3 -m pip install --upgrade --break-system-packages \
         pyinstaller \
         pytest \
         pytest-watch \
-        readline
+        readline \
+        mkdocstrings \
+        mkdocstrings-python \
+        mkdocs-material
 
 # Install mlkctxt
 WORKDIR /mlkctxt
