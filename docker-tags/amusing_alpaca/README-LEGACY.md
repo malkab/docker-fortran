@@ -1,3 +1,5 @@
+**LEGACY IMAGE:** use the malkab/amusing-alpaca-vscode_devcontainer image instead.
+
 Image to develop in Fortran, including also Python and Node.
 
 Contains:
