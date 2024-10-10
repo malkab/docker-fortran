@@ -29,7 +29,8 @@ USER vscode
 RUN pip install --upgrade pip
 
 # PIP installs
-RUN python3 -m pip install --upgrade --break-system-packages \
+RUN pip install --upgrade \
+        markdown==3.6 \
         f90wrap \
         ford
 
