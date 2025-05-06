@@ -3,7 +3,7 @@
 # Build image
 #
 # -------------------
-FROM malkab/python:3.11-vscode_devcontainer
+FROM python:3.12-devcontainer
 
 LABEL author="Juan Pedro Perez"
 LABEL email="jp.perez.alcantara@gmail.com"
